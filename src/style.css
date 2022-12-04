@@ -1,0 +1,403 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.App {
+  background-color: #252525;
+}
+.App .nav {
+  position: fixed;
+  top: 0;
+  padding: 20px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.App .nav .logo {
+  width: 100px;
+  color: #FFCC59;
+}
+.App .nav ul {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding-top: 100px;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 0 30px #252525;
+  -webkit-clip-path: circle(0px at right top);
+          clip-path: circle(0px at right top);
+  transition: -webkit-clip-path 500ms ease-in-out;
+  transition: clip-path 500ms ease-in-out;
+  transition: clip-path 500ms ease-in-out, -webkit-clip-path 500ms ease-in-out;
+  background-color: #252525;
+}
+.App .nav ul .buy {
+  background-color: #FFCC59;
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+.App .nav ul li {
+  list-style: none;
+  cursor: pointer;
+}
+.App .nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.App .nav .menu {
+  z-index: 2;
+  color: #FFCC59;
+  cursor: pointer;
+  font-size: 3rem;
+}
+.App .nav.show ul {
+  -webkit-clip-path: circle(100% at center);
+          clip-path: circle(100% at center);
+}
+.App .home {
+  overflow: hidden;
+  background: linear-gradient(to left, #6E36C5, #3AAEBB);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding-inline: 30px;
+}
+.App .home .home-image {
+  width: 90%;
+  max-width: 600px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.App .home .home-image img {
+  width: 100%;
+}
+.App .home .home-image.animate__slideInUp {
+  opacity: 1;
+}
+.App .home .home-content {
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+.App .home .home-content .home-content-text {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 3px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.App .home .home-content .home-content-text.animate__slideInLeft {
+  opacity: 1;
+}
+.App .home .home-content .home-content-button {
+  padding: 15px 30px;
+  border: 2px solid #FFCC59;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: #FFCC59;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.App .home .home-content .home-content-button.animate__zoomIn {
+  opacity: 1;
+}
+.App .about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+  gap: 50px;
+  padding-inline: 30px;
+  background-color: #252525;
+}
+.App .about .about-image {
+  width: 90%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.App .about .about-image img {
+  width: 100%;
+}
+.App .about .about-image.animate__slideInRight {
+  opacity: 1;
+}
+.App .about .about-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  color: white;
+}
+.App .about .about-content .about-content-text {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.App .about .about-content .about-content-text.animate__slideInLeft {
+  opacity: 1;
+}
+.App .about .about-content .about-content-button {
+  padding: 15px 50px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border: 2px solid #FFCC59;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+.App .about .about-content .about-content-button a {
+  color: #FFCC59;
+  text-decoration: none;
+  font-weight: bold;
+}
+.App .about .about-content .about-content-button.animate__zoomIn {
+  opacity: 1;
+}
+.App .pricing {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #252525;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding-inline: 30px;
+  overflow: hidden;
+}
+.App .pricing .pricing-text {
+  font-size: 34px;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.App .pricing .pricing-text span {
+  color: #FFCC59;
+}
+.App .pricing .pricing-text.animate__slideInRight {
+  opacity: 1;
+}
+.App .pricing .pricing-button {
+  padding: 10px 50px;
+  background-color: #FFCC59;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.App .pricing .pricing-button a {
+  text-decoration: none;
+  color: #252525;
+}
+.App .pricing .pricing-button.animate__zoomIn {
+  opacity: 1;
+}
+.App .contact {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 50px;
+}
+.App .contact .form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 2px solid #FFFFF0;
+  background-color: #252525;
+  padding: 20px;
+  border-radius: 5px;
+}
+.App .contact .form h1 {
+  text-align: left;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  height: 80px;
+  padding-inline: 10px;
+}
+.App .contact .form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.App .contact .form form input {
+  border: 1px solid black;
+  padding: 10px;
+  width: auto;
+  margin-inline: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-family: sans-serif;
+}
+.App .contact .form form input::-moz-placeholder {
+  color: darkgray;
+  font-weight: 400;
+  font-family: "open sans", sans-serif;
+}
+.App .contact .form form input:-ms-input-placeholder {
+  color: darkgray;
+  font-weight: 400;
+  font-family: "open sans", sans-serif;
+}
+.App .contact .form form input::placeholder {
+  color: darkgray;
+  font-weight: 400;
+  font-family: "open sans", sans-serif;
+}
+.App .contact .form form textarea {
+  border: 1px solid black;
+  padding: 10px;
+  height: 100px;
+  width: auto;
+  resize: none;
+  margin-inline: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+.App .contact .form form .form-btn {
+  width: auto;
+  background-color: #FFCC59;
+  color: white;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  font-size: 30px;
+  padding: 10px;
+  margin: 0 10px 20px 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1100px) {
+  .App {
+    background-color: #252525;
+  }
+  .App .nav {
+    padding-inline: 200px;
+  }
+  .App .nav ul {
+    -webkit-clip-path: none;
+            clip-path: none;
+    position: static;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    flex-direction: row;
+    background-color: transparent;
+    padding-top: 0;
+    box-shadow: none;
+  }
+  .App .nav .menu {
+    display: none;
+  }
+  .App .home {
+    display: flex;
+    flex-direction: row;
+    padding-inline: 200px;
+    gap: 100px;
+    padding-top: 100px;
+  }
+  .App .home .home-image {
+    width: 190%;
+  }
+  .App .home .home-content {
+    text-align: start;
+    align-items: flex-start;
+  }
+  .App .home .home-content .home-content-text {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  .App .home .home-content .home-content-button {
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+    padding-inline: 80px;
+    font-size: 24px;
+  }
+  .App .home .home-content .home-content-button:hover {
+    background-color: #FFCC59;
+    color: white;
+  }
+  .App .about {
+    flex-direction: row;
+    padding-inline: 200px;
+    gap: 100px;
+  }
+  .App .about div .aboutImage {
+    width: 100%;
+  }
+  .App .about .about-content {
+    width: 70%;
+  }
+  .App .about .about-content .about-content-button {
+    transition: 0.3s;
+  }
+  .App .about .about-content .about-content-button:hover {
+    background-color: #FFCC59;
+  }
+  .App .about .about-content .about-content-button:hover a {
+    color: white;
+  }
+  .App .pricing .pricing-button {
+    transition: 0.3s;
+    font-size: 1.5rem;
+  }
+  .App .pricing .pricing-button:hover {
+    border: 1px solid #FFCC59;
+    background-color: transparent;
+  }
+  .App .pricing .pricing-button:hover a {
+    color: #FFCC59;
+  }
+  .App .contact {
+    padding-inline: 500px;
+    height: 100vh;
+    justify-content: center;
+  }
+}/*# sourceMappingURL=style.css.map */
