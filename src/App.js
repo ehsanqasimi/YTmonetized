@@ -34,15 +34,14 @@ function App() {
 
 
   return (
-    <div className="App">
-      
-      <Nav />
-      <Home>
-      </Home>
-      <About />
-      <Pricing />
-      <Contact />
-    </div>
+      <div className="App">
+            <Nav />
+            <Home>
+            </Home>
+            <About />
+            <Pricing />
+            <Contact />
+      </div>
   );
 }
 
