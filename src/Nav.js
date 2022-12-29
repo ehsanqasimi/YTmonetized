@@ -3,7 +3,6 @@ import Logo from '../src/images/monitizedLogo.svg';
 import React, { useRef, useState } from 'react'
 import 'animate.css'
 
-console.log(Logo)
 function Nav() {    
 
     const [isOpen, setIsOpen] = useState(false)
